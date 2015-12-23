@@ -1,0 +1,37 @@
+<div ng-controller = "MainCtrl">
+<div class = "container">
+  <div class = "row">
+  <div style = "position: relative;">
+  <canvas id = "imageCanvas"></canvas>
+  <canvas id = "canvastext" style="position: absolute; left: 0; top: 0; z-index: 1;"></canvas>
+  </div>
+</div>
+  <div class = "row">
+
+  <div class="file-field input-field">
+    <div class="btn">
+      <span>File</span>
+      <input type="file" ng-model="photo" id = "imageLoader" ng-click="uploadFile()">
+    </div>
+    <div class="file-path-wrapper">
+      <input class="file-path validate" type="text">
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <input id="toptext" type="text" class="validate" ng-model = "toptext" ng-change="changeText()">
+    </div>
+  </div>
+  <!-- <div class="row">
+    <div class="input-field col s12">
+        <label for="bottomtext">Bottom Text</label>
+    <input id="bottomtext" type="text" class="validate" ng-model = "bottomtext" ng-change = "bottomtextChange()">
+    </div>
+  </div> -->
+  <div class = "row">
+    <a href='' class="waves-effect waves-light btn-large" ng-click="create()" id = "downloadButton">Download</a>
+  </div>
+
+</div>
+</div>
+</div>
