@@ -29,7 +29,7 @@ angular.module('tumblrmemeApp')
                     img.onload = function() {
                         canvas.width = img.width;
                         canvas.height = img.height;
-                        ctx.drawImage(img, 0, 100);
+                        ctx.drawImage(img, 0, 0);
                     };
                     img.src = event.target.result;
                 };
@@ -84,7 +84,6 @@ angular.module('tumblrmemeApp')
         };
 
         $scope.create = function() {
-            var download = document.getElementById('downloadButton');
             var canvasimg = document.getElementById('imageCanvas');
             var canvastext = document.getElementById('canvastext');
             var ctr = canvasimg.getContext('2d');
@@ -92,7 +91,7 @@ angular.module('tumblrmemeApp')
             var uri = canvasimg.toDataURL("image/png");
             downloadImage(uri, generateName());
             // download.href = data;
-        }
+        };
 
         function generateName() {
             var n = [];
@@ -100,14 +99,14 @@ angular.module('tumblrmemeApp')
                 n.push((Math.floor(Math.random() * 16)).toString(16));
             }
             return n.join('');
-        };
+        }
 
         function downloadImage(uri, name) {
             var link = document.createElement('a');
             link.download = name;
             link.href = uri;
             link.click();
-        };
+        }
 
         //         $scope.create = function() {
         //   var uri = document.getElementById('myCanvas').toDataURL();
